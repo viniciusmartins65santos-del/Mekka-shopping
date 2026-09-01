@@ -16,9 +16,10 @@ body {
     background-color: #c89a04;
     color: #0f0f0f;
     padding: 25px;
-    font-family: "Exo 2", sans-serif;
+    font-family: "Saira", sans-serif;
     font-weight: 800;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 
@@ -92,4 +93,28 @@ h2 {
     border-radius: 10px;
 }
 
+.market{
+    background-color: #c89a04;
+    color: #0f0f0f;
+    width: 60%;
+    height: 40px;
+    text-align: center;
+    border: 2px solid #0f0f0f;
+    border-radius: 10px;
+    margin: 25px auto;
+    padding: 10px;
+    display: block;
+    
+    
+}
+
+.market:hover{
+    background-color: #a37f06;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.botao{
+    text-decoration: none;
+}
             

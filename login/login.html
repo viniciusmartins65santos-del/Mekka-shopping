@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre na demonstração do Mekka Shopping ou experimente o acesso de visitante.">
+    <title>Entrar | Mekka Shopping</title>
+    <link rel="stylesheet" href="../compartilhado/estilos.css">
+    <link rel="stylesheet" href="../compartilhado/formularios.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="../compartilhado/comum.js" defer></script>
+    <script src="login.js" defer></script>
+</head>
+<body>
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <a class="marca" href="../inicio/mekka.html" aria-label="Mekka Shopping, início"><span class="simbolo" aria-hidden="true">M</span><span>MEKKA <small>SHOPPING</small></span></a>
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="../inicio/mekka.html">Início</a></li>
+                <li><a href="../marketplace/market.html">Marketplace</a></li>
+                <li><a href="../anunciar/anunciar.html" class="botao compacto">Anunciar</a></li>
+                <li><a href="../login/login.html" id="link-conta">Entrar</a></li>
+                <li><button type="button" id="sair" class="link-botao" hidden>Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <noscript><p class="aviso">Ative o JavaScript para pesquisar equipamentos e usar os formulários demonstrativos.</p></noscript>
+
+        <section class="acesso" aria-labelledby="titulo-login">
+            <header class="abertura"><p class="sobretitulo">BOM TER VOCÊ POR AQUI</p><h1 id="titulo-login">Entre na sua conta</h1><p>Continue explorando novas oportunidades.</p></header>
+            <p class="aviso">Acesso demonstrativo: use o e-mail cadastrado nesta aba e qualquer senha fictícia com pelo menos 6 caracteres. Não há autenticação real.</p>
+            <form id="form-login" class="painel" method="post" novalidate>
+                <p id="retorno-login" class="mensagem" role="status" aria-live="polite" hidden></p>
+                <p class="campo"><label for="email">E-mail</label><input id="email" type="email" required maxlength="120" autocomplete="username" placeholder="nome@exemplo.com"></p>
+                <p class="campo"><label for="senha">Senha fictícia</label><input id="senha" type="password" required minlength="6" maxlength="64" autocomplete="off"></p>
+                <p class="recuperacao"><a href="../recuperar-senha/recuperar-senha.html">Esqueceu a senha?</a></p>
+                <button class="botao botao-completo" type="submit" disabled>Entrar na demonstração</button>
+                <button class="botao secundario botao-completo" type="button" id="entrar-visitante" disabled>Entrar como visitante</button>
+                <p class="rodape-form">Ainda não tem conta? <a href="../cadastro/cadastro.html">Criar conta</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p><strong>MEKKA SHOPPING</strong><br>Equipamentos que movimentam novos negócios.</p>
+        <nav aria-label="Links do rodapé"><a href="../marketplace/market.html">Explorar equipamentos</a><a href="../privacidade/privacidade.html">Privacidade e demonstração</a><a href="../cadastro/cadastro.html">Criar conta</a></nav>
+        <small>Projeto acadêmico · PUC-Campinas · 2026. Anúncios, preços e operações demonstrativos.</small>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veja descrição, características e preço do equipamento e simule um contato com o vendedor.">
+    <title>Detalhes do equipamento | Mekka Shopping</title>
+    <link rel="stylesheet" href="../compartilhado/estilos.css">
+    <link rel="stylesheet" href="produto.css">
+    <script src="../compartilhado/comum.js" defer></script>
+    <script src="../compartilhado/dados.js" defer></script>
+    <script src="produto.js" defer></script>
+</head>
+<body>
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <a class="marca" href="../inicio/mekka.html" aria-label="Mekka Shopping, início"><span class="simbolo" aria-hidden="true">M</span><span>MEKKA <small>SHOPPING</small></span></a>
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="../inicio/mekka.html">Início</a></li>
+                <li><a href="../marketplace/market.html">Marketplace</a></li>
+                <li><a href="../anunciar/anunciar.html" class="botao compacto">Anunciar</a></li>
+                <li><a href="../login/login.html" id="link-conta">Entrar</a></li>
+                <li><button type="button" id="sair" class="link-botao" hidden>Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <noscript><p class="aviso">Ative o JavaScript para pesquisar equipamentos e usar os formulários demonstrativos.</p></noscript>
+
+        <nav class="caminho" aria-label="Localização na navegação"><a href="../inicio/mekka.html">Início</a><span aria-hidden="true">/</span><a href="../marketplace/market.html">Marketplace</a><span aria-hidden="true">/</span><span>Equipamento</span></nav>
+        <h1 id="titulo-produto">Detalhes do equipamento</h1>
+        <p id="produto-inexistente" class="estado-vazio" hidden>Equipamento não encontrado. <a href="../marketplace/market.html">Voltar ao marketplace</a>.</p>
+        <article id="detalhes-produto" hidden>
+            <section class="apresentacao-produto" aria-label="Imagem e valor do equipamento">
+                <figure class="foto-detalhe"><img id="foto-produto" src="../produtos/sem-imagem.svg" alt="Equipamento" width="900" height="600"><figcaption>Imagem ilustrativa do anúncio demonstrativo.</figcaption></figure>
+                <section class="painel resumo-produto" aria-labelledby="titulo-resumo">
+                    <p class="sobretitulo">ANÚNCIO DEMONSTRATIVO</p><h2 id="titulo-resumo">Uma oportunidade para seu negócio</h2>
+                    <p id="preco-produto" class="preco-detalhe"></p><p id="local-produto"></p><p id="condicao-produto"></p>
+                    <a class="botao" href="#contato">Tenho interesse</a>
+                    <p class="nota">Simule um contato com o vendedor. Não há compra ou pagamento nesta demonstração.</p>
+                </section>
+            </section>
+            <section class="secao" aria-labelledby="titulo-descricao"><h2 id="titulo-descricao">Sobre o equipamento</h2><p id="descricao-produto" class="descricao-produto"></p></section>
+            <section class="secao" aria-labelledby="titulo-ficha"><h2 id="titulo-ficha">Características do anúncio</h2><dl class="ficha"><dt>Marca</dt><dd id="marca-produto"></dd><dt>Categoria</dt><dd id="categoria-produto"></dd><dt>Ano</dt><dd id="ano-produto"></dd><dt>Condição</dt><dd id="estado-produto"></dd><dt>Localização</dt><dd id="cidade-produto"></dd></dl></section>
+            <section id="contato" class="secao painel" aria-labelledby="titulo-contato">
+                <h2 id="titulo-contato">Fale com o anunciante</h2><p class="nota">Este formulário simula o contato. A mensagem não é enviada nem armazenada. Use dados fictícios.</p>
+                <form id="form-contato" method="post" novalidate>
+                    <p class="campo"><label for="nome-contato">Nome</label><input id="nome-contato" type="text" required minlength="2" maxlength="80" autocomplete="name"></p>
+                    <p class="campo"><label for="email-contato">E-mail</label><input id="email-contato" type="email" required maxlength="120" autocomplete="email"></p>
+                    <p class="campo largura-total"><label for="mensagem-contato">Sua mensagem</label><textarea id="mensagem-contato" required minlength="10" maxlength="1000" placeholder="Conte ao vendedor o que você gostaria de saber."></textarea></p>
+                    <p id="retorno-contato" class="mensagem largura-total" role="status" aria-live="polite" hidden></p>
+                    <button class="botao" type="submit" disabled>Simular envio</button>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <footer class="rodape">
+        <p><strong>MEKKA SHOPPING</strong><br>Equipamentos que movimentam novos negócios.</p>
+        <nav aria-label="Links do rodapé"><a href="../marketplace/market.html">Explorar equipamentos</a><a href="../privacidade/privacidade.html">Privacidade e demonstração</a><a href="../cadastro/cadastro.html">Criar conta</a></nav>
+        <small>Projeto acadêmico · PUC-Campinas · 2026. Anúncios, preços e operações demonstrativos.</small>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+.caminho { display: flex; flex-wrap: wrap; gap: 12px; padding: 32px 0 24px; font-size: 0.85rem; color: var(--suave); }
+#titulo-produto { font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 32px; }
+.apresentacao-produto { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: start; }
+.foto-detalhe img { width: 100%; aspect-ratio: 3 / 2; object-fit: contain; border-radius: 10px; background: #eee; }
+.foto-detalhe figcaption { color: var(--suave); font-size: 0.8rem; margin-top: 10px; }
+.resumo-produto h2 { margin: 14px 0 22px; }
+.preco-detalhe { font-size: clamp(1.9rem, 3vw, 2.5rem); color: var(--dourado); font-weight: 700; }
+.resumo-produto .botao { width: 100%; margin-top: 25px; }
+.descricao-produto { margin-top: 20px; max-width: 800px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ficha { display: grid; grid-template-columns: minmax(100px, 180px) 1fr; max-width: 800px; margin-top: 20px; }
+.ficha dt, .ficha dd { padding: 14px; border-bottom: 1px solid var(--borda); overflow-wrap: anywhere; }
+.ficha dt { color: var(--suave); }
+#form-contato { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+@media (max-width: 760px) { .apresentacao-produto, #form-contato { grid-template-columns: 1fr; } }

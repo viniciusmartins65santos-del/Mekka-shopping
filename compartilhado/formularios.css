@@ -1,0 +1,7 @@
+.acesso { width: 100%; max-width: 520px; margin: 0 auto; }
+.acesso .abertura { text-align: center; }
+.acesso .abertura h1 { font-size: 2.5rem; }
+.acesso .painel { border-top: 3px solid var(--dourado); }
+.botao-completo { width: 100%; }
+.rodape-form { text-align: center; margin-top: 24px; font-size: 0.9rem; }
+@media (max-width: 480px) { .acesso .abertura h1 { font-size: 2rem; } }

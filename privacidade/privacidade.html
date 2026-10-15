@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entenda quais dados a demonstração acadêmica Mekka Shopping mantém no navegador.">
+    <title>Privacidade e demonstração | Mekka Shopping</title>
+    <link rel="stylesheet" href="../compartilhado/estilos.css">
+    <link rel="stylesheet" href="privacidade.css">
+    <script src="../compartilhado/comum.js" defer></script>
+    <script src="privacidade.js" defer></script>
+</head>
+<body>
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <a class="marca" href="../inicio/mekka.html" aria-label="Mekka Shopping, início"><span class="simbolo" aria-hidden="true">M</span><span>MEKKA <small>SHOPPING</small></span></a>
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="../inicio/mekka.html">Início</a></li>
+                <li><a href="../marketplace/market.html">Marketplace</a></li>
+                <li><a href="../anunciar/anunciar.html" class="botao compacto">Anunciar</a></li>
+                <li><a href="../login/login.html" id="link-conta">Entrar</a></li>
+                <li><button type="button" id="sair" class="link-botao" hidden>Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <noscript><p class="aviso">Ative o JavaScript para pesquisar equipamentos e usar os formulários demonstrativos.</p></noscript>
+
+        <article class="conteudo-texto">
+            <header class="abertura"><p class="sobretitulo">SOBRE ESTE PROJETO</p><h1>Privacidade e demonstração</h1><p>O Mekka Shopping é um projeto acadêmico de desenvolvimento web da PUC-Campinas.</p></header>
+            <section aria-labelledby="sobre-demo"><h2 id="sobre-demo">Uma experiência de demonstração</h2><p>As ofertas e os preços servem para apresentar o funcionamento de um marketplace. Não são propostas comerciais. Não realizamos pagamentos, vendas ou contatos com vendedores.</p><p>As marcas e imagens são usadas como referências visuais no trabalho acadêmico. Os links dos fabricantes abrem sites externos.</p></section>
+            <section aria-labelledby="dados-demo"><h2 id="dados-demo">Dados neste navegador</h2><p>O cadastro guarda somente nome e e-mail fictícios durante a sessão da aba. As senhas, a data de nascimento e o gênero não são armazenados. O botão Sair encerra o acesso demonstrativo.</p><p>Os anúncios criados, incluindo sua imagem, ficam no armazenamento local deste navegador até você apagá-los. Eles não são publicados para outros usuários. As mensagens de contato e os pedidos de recuperação não são enviados nem salvos.</p><p>Use dados fictícios ao testar. Não há servidor de contas ou banco de dados neste projeto.</p></section>
+            <section class="painel" aria-labelledby="limpar-demo"><h2 id="limpar-demo">Apagar os dados da demonstração</h2><p>Você pode remover os anúncios locais e o cadastro desta aba. O catálogo original continua disponível.</p><button id="limpar-dados" type="button" class="botao secundario" disabled>Apagar meus dados de demonstração</button><p id="retorno-limpeza" class="mensagem" role="status" aria-live="polite" hidden></p></section>
+        </article>
+    </main>
+
+    <footer class="rodape">
+        <p><strong>MEKKA SHOPPING</strong><br>Equipamentos que movimentam novos negócios.</p>
+        <nav aria-label="Links do rodapé"><a href="../marketplace/market.html">Explorar equipamentos</a><a href="../privacidade/privacidade.html">Privacidade e demonstração</a><a href="../cadastro/cadastro.html">Criar conta</a></nav>
+        <small>Projeto acadêmico · PUC-Campinas · 2026. Anúncios, preços e operações demonstrativos.</small>
+    </footer>
+
+</body>
+</html>

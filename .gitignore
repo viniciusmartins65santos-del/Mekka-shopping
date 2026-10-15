@@ -1,0 +1,9 @@
+outputs/
+work/
+.vscode/
+*.code-workspace
+.env
+.env.*
+node_modules/
+.DS_Store
+Thumbs.db

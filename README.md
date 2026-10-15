@@ -1,10 +1,6 @@
 # Mekka Shopping
 
-### Marketplace de Máquinas e Equipamentos
-
-Projeto acadêmico desenvolvido por alunos da **Pontifícia Universidade Católica de Campinas (PUC-Campinas)**, com o objetivo de criar uma plataforma de apresentação e comercialização de máquinas e equipamentos industriais, novos e seminovos.
-
----
+Marketplace acadêmico de máquinas e equipamentos industriais, desenvolvido para o PI de Desenvolvimento de Sistemas Web da PUC-Campinas.
 
 ## Integrantes
 
@@ -15,121 +11,136 @@ Projeto acadêmico desenvolvido por alunos da **Pontifícia Universidade Católi
 | Vinicius Mendes | 26008770 |
 | Gabriel Carvalho | 26002682 |
 
----
+## Como abrir
 
-## Sobre o Projeto
+Abra esta pasta no VS Code e inicie um servidor local pelo arquivo `index.html`. Se a extensão Live Server estiver instalada, use **Open with Live Server**. O `index.html` encaminha para `inicio/mekka.html`.
 
-O Mekka Shopping é uma plataforma web voltada ao mercado de máquinas e equipamentos industriais.
+Não é necessário instalar bibliotecas JavaScript ou executar uma compilação. Use sempre o mesmo endereço e a mesma porta durante os testes, pois os dados da demonstração pertencem ao endereço aberto no navegador.
 
-O projeto apresenta uma página inicial com lojas oficiais de fabricantes e produtos em destaque, além de um Marketplace com cards de equipamentos, informações básicas, preços e acesso às ofertas.
+## Organização
 
-A proposta é facilitar a visualização e a busca por equipamentos, proporcionando uma interface organizada, intuitiva e visualmente atrativa.
+Cada tela tem sua própria pasta com HTML, CSS e JavaScript:
 
-## Objetivos
+```text
+index.html
+inicio/
+    mekka.html
+    mekka.css
+    mekka.js
+marketplace/
+    market.html
+    market.css
+    market.js
+produto/
+    produto.html
+    produto.css
+    produto.js
+anunciar/
+    anunciar.html
+    anunciar.css
+    anunciar.js
+cadastro/
+    cadastro.html
+    cadastro.css
+    cadastro.js
+login/
+    login.html
+    login.css
+    login.js
+recuperar-senha/
+    recuperar-senha.html
+    recuperar-senha.css
+    recuperar-senha.js
+privacidade/
+    privacidade.html
+    privacidade.css
+    privacidade.js
+compartilhado/
+    estilos.css
+    formularios.css
+    comum.js
+    dados.js
+    cartoes.js
+logos/
+produtos/
+```
 
-- Desenvolver uma interface web para apresentação de máquinas e equipamentos.
-- Criar uma página inicial organizada e funcional.
-- Implementar um Marketplace com produtos novos e seminovos.
-- Facilitar a navegação entre fabricantes e equipamentos.
-- Aplicar conceitos de HTML e CSS no desenvolvimento front-end.
-- Desenvolver uma identidade visual moderna e consistente.
-
-## Tecnologias Utilizadas
-
-- **HTML5:** Estruturação das páginas web.
-- **CSS3:** Estilização, layout e identidade visual.
-- **Flexbox:** Organização dos elementos e cards.
-- **Git/GitHub:** Controle de versão e gerenciamento do projeto.
-
-## **Estrutura do Projeto**
-
-
+A pasta `compartilhado` evita repetir os mesmos estilos e funções. `logos` e `produtos` contêm as imagens. A pasta `outputs`, se presente, contém documentos acadêmicos anteriores e não é necessária para executar o site.
 
 ## Funcionalidades
 
-### Página Inicial
+- Navegação entre todas as telas, com cabeçalho e rodapé comuns.
+- Página inicial com pesquisa, fabricantes e equipamentos em destaque.
+- Marketplace com 12 equipamentos de demonstração.
+- Busca por nome, marca ou categoria, sem diferença entre letras maiúsculas e minúsculas ou acentos.
+- Filtros combinados por categoria, marca, condição, cidade e faixa de preço.
+- Ordenação por menor preço, maior preço e ano mais recente.
+- Mensagens para busca sem resultados e intervalo de preço inválido.
+- Detalhes do equipamento selecionado e tratamento de identificador inexistente.
+- Contato com o vendedor e recuperação de senha simulados.
+- Cadastro com validação, confirmação de senha e aceite da demonstração.
+- Entrada demonstrativa e acesso como visitante.
+- Criação de anúncio com imagem opcional, prévia e armazenamento local.
+- Limpeza dos dados da demonstração na página de privacidade.
+- Layout adaptável a celular, tablet e computador.
 
-- Apresentação da marca Mekka Shopping.
-- Barra de pesquisa.
-- Seção de lojas oficiais.
-- Links para fabricantes de máquinas e equipamentos.
-- Seção de produtos mais procurados.
-- Botão de acesso ao Marketplace.
-- Identidade visual baseada nas cores preto e dourado.
+## Limites da demonstração
 
-### Marketplace
+O projeto usa HTML, CSS e JavaScript puro. Não possui servidor de contas, banco de dados, autenticação real, envio de e-mails ou pagamentos.
 
-- Apresentação de máquinas e equipamentos.
-- Cards individuais de produtos.
-- Imagens dos equipamentos.
-- Nome e categoria dos produtos.
-- Ano de fabricação.
-- Estado do equipamento.
-- Preço de venda.
-- Botão "Ver oferta".
+Os preços, as condições e as localizações são exemplos acadêmicos. Os anúncios criados pelo formulário ficam apenas neste navegador e não são publicados para outros usuários.
 
-## Identidade Visual
+No cadastro, apenas o nome e o e-mail fictícios são guardados em `sessionStorage`. Senhas, nascimento e gênero não são salvos. O login aceita o e-mail cadastrado nesta aba e qualquer senha fictícia com pelo menos 6 caracteres. Isso simula o fluxo da interface; não valida uma identidade real.
 
-O projeto utiliza uma identidade visual baseada principalmente em:
+Os anúncios ficam em `localStorage` e permanecem após recarregar as páginas. A imagem deve ser JPG, PNG ou WebP e ter até 500 KB. Se o espaço do navegador estiver cheio ou bloqueado, o formulário apresenta uma mensagem e mantém os campos preenchidos.
 
-- **Preto:** Fundo e elementos de contraste.
-- **Dourado:** Títulos, destaques e elementos de identidade da marca.
-- **Branco:** Cards e informações dos produtos.
+Use informações fictícias durante a apresentação.
 
-A proposta visual busca transmitir organização, modernidade e relação com o setor industrial.
+## Como explicar o JavaScript
 
-## Como Executar o Projeto
+O código está sem comentários e usa funções pequenas com nomes em português. Os arquivos são carregados com `defer`, para executar depois da leitura do HTML.
 
-1. Clone o repositório:
+| Arquivo | O que explicar |
+|---|---|
+| `compartilhado/dados.js` | `produtos` é uma lista de objetos. Cada objeto tem nome, preço, imagem e outras informações de um equipamento. `obterProdutos()` junta essa lista aos anúncios locais. |
+| `compartilhado/cartoes.js` | `mostrarProdutos()` copia o modelo de cartão do HTML, preenche os textos e a imagem e coloca o cartão na lista da página. |
+| `compartilhado/comum.js` | Reúne formatação de preço, mensagens, validação dos campos e leitura da sessão. Também atualiza o nome no cabeçalho e permite sair. |
+| `inicio/mekka.js` | Escolhe os oito primeiros equipamentos para exibir em destaque. A pesquisa da página inicial usa um formulário HTML. |
+| `marketplace/market.js` | Lê os campos, usa `filter()` para selecionar equipamentos e `sort()` para ordená-los. Em seguida, chama `mostrarProdutos()`. |
+| `produto/produto.js` | Lê o `id` da URL, procura o objeto com `find()` e preenche os detalhes. Também simula o contato. |
+| `cadastro/cadastro.js` | Compara as senhas, valida o formulário e guarda apenas nome e e-mail fictícios na sessão. |
+| `login/login.js` | Confere o e-mail demonstrativo e inicia uma sessão local, ou permite entrar como visitante. |
+| `recuperar-senha/recuperar-senha.js` | Valida o e-mail e mostra uma mensagem de recuperação simulada. |
+| `anunciar/anunciar.js` | Lê a imagem com `FileReader`, monta um objeto com os campos e salva a lista de anúncios no navegador. |
+| `privacidade/privacidade.js` | Remove somente as chaves usadas por este projeto no armazenamento do navegador. |
 
-```bash
-git clone URL_DO_REPOSITORIO
-```
+Conceitos principais para estudar:
 
-2. Acesse a pasta do projeto:
+- `const` e `let`: guardam valores; `let` permite atribuir outro valor depois.
+- Objetos: agrupam as informações de um equipamento.
+- Arrays: guardam listas, como o catálogo de produtos.
+- `if`: escolhe o que executar conforme uma condição.
+- Funções: agrupam instruções para uma tarefa específica.
+- `addEventListener`: executa uma função quando acontece um clique ou envio de formulário.
+- `preventDefault`: impede o envio tradicional do formulário, permitindo tratar a ação na própria página.
+- `forEach`: percorre uma lista; `map` cria uma lista de valores; `filter` seleciona itens; `find` encontra um item; `sort` ordena.
+- `textContent`: insere o texto como texto, sem interpretar o que foi digitado como HTML.
+- `URLSearchParams`: lê informações da URL, como `?id=cat-320`.
+- `JSON.stringify` e `JSON.parse`: convertem os dados para texto e de volta, porque o armazenamento do navegador guarda texto.
+- `try` e `catch`: permitem mostrar uma mensagem caso o navegador não consiga ler ou salvar os dados.
 
-```bash
-cd Mekka-Shopping
-```
+## Roteiro de apresentação
 
-3. Abra o arquivo `index.html` em um navegador.
+1. Abrir a página inicial e pesquisar por `usinagem`.
+2. Limpar os filtros, combinar categoria e condição e ordenar por preço.
+3. Abrir uma oferta e simular uma mensagem ao vendedor.
+4. Mostrar que senhas diferentes impedem o cadastro; corrigir e entrar na demonstração.
+5. Criar um anúncio, abrir seus detalhes e recarregar a página para mostrar a persistência local.
+6. Encontrar o anúncio pelo filtro de marca e apagar os dados pela página de privacidade.
+7. Diminuir a janela para mostrar a adaptação ao celular.
 
-4. Navegue pelo site utilizando os links disponíveis para acessar o Marketplace.
+## Identidade visual e estrutura
 
-> Não é necessário instalar dependências ou configurar um servidor para executar a versão atual do projeto.
+O site mantém a identidade preta e dourada. O HTML utiliza elementos como `header`, `nav`, `main`, `section`, `article`, `figure`, `form` e `footer`, além de rótulos para os campos. Todas as páginas têm `lang="pt-BR"`, título, descrição e configuração de viewport.
 
-## Gestão do Projeto
-
-O desenvolvimento é organizado utilizando o **Jira**, com as seguintes colunas:
-
-- **To Do:** Funcionalidades planejadas e pendentes.
-- **In Progress:** Funcionalidades em desenvolvimento.
-- **Done:** Funcionalidades concluídas.
-
-Entre as atividades de desenvolvimento estão o redesign da tela inicial, implementação de pesquisa, filtros de produtos, responsividade e melhorias na navegação.
-
-## Melhorias Futuras
-
-- Implementação da funcionalidade de pesquisa.
-- Adição de filtros por categoria, marca e estado.
-- Criação de páginas detalhadas dos produtos.
-- Implementação de sistema de categorias.
-- Melhorias na responsividade.
-- Adição de rodapé institucional.
-- Aprimoramento da experiência de navegação.
-
-## Informações Acadêmicas
-
-**Instituição:** Pontifícia Universidade Católica de Campinas — PUC-Campinas
-
-**Projeto:** Mekka Shopping
-
-**Área:** Desenvolvimento Web / Front-end
-
-**Integrantes:** Thiago Lemes, Henrique Sampaio, Vinicius Mendes e Gabriel Carvalho.
-
----
-
-## Licença
-
-Este projeto foi desenvolvido para fins acadêmicos e educacionais.
+Para a entrega do site, inclua o `index.html`, as pastas das telas, `compartilhado`, `logos`, `produtos` e este README.

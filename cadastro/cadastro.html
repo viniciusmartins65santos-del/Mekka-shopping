@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experimente o cadastro demonstrativo do Mekka Shopping.">
+    <title>Criar conta | Mekka Shopping</title>
+    <link rel="stylesheet" href="../compartilhado/estilos.css">
+    <link rel="stylesheet" href="../compartilhado/formularios.css">
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="../compartilhado/comum.js" defer></script>
+    <script src="cadastro.js" defer></script>
+</head>
+<body>
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <a class="marca" href="../inicio/mekka.html" aria-label="Mekka Shopping, início"><span class="simbolo" aria-hidden="true">M</span><span>MEKKA <small>SHOPPING</small></span></a>
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="../inicio/mekka.html">Início</a></li>
+                <li><a href="../marketplace/market.html">Marketplace</a></li>
+                <li><a href="../anunciar/anunciar.html" class="botao compacto">Anunciar</a></li>
+                <li><a href="../login/login.html" id="link-conta">Entrar</a></li>
+                <li><button type="button" id="sair" class="link-botao" hidden>Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <noscript><p class="aviso">Ative o JavaScript para pesquisar equipamentos e usar os formulários demonstrativos.</p></noscript>
+
+        <section class="acesso" aria-labelledby="titulo-cadastro">
+            <header class="abertura"><p class="sobretitulo">BEM-VINDO AO MEKKA</p><h1 id="titulo-cadastro">Crie sua conta</h1><p>Seu primeiro passo para encontrar novas oportunidades.</p></header>
+            <p class="aviso">Cadastro demonstrativo. Use dados fictícios. A senha serve apenas para testar a validação e não será salva.</p>
+            <form id="form-cadastro" class="painel" method="post" novalidate>
+                <p class="campo"><label for="nome">Nome completo</label><input id="nome" type="text" required minlength="3" maxlength="80" autocomplete="name" placeholder="Seu nome completo"></p>
+                <p class="campo"><label for="email">E-mail</label><input id="email" type="email" required maxlength="120" autocomplete="email" placeholder="nome@exemplo.com"></p>
+                <p class="campo"><label for="senha">Senha fictícia</label><input id="senha" type="password" required minlength="6" maxlength="64" autocomplete="new-password" aria-describedby="ajuda-senha"><small id="ajuda-senha">Use pelo menos 6 caracteres.</small></p>
+                <p class="campo"><label for="confirmarsenha">Confirme a senha fictícia</label><input id="confirmarsenha" type="password" required minlength="6" maxlength="64" autocomplete="new-password"></p>
+                <p class="campo"><label for="nascimento">Data de nascimento (opcional)</label><input id="nascimento" type="date" autocomplete="bday"></p>
+                <p class="campo"><label for="genero">Gênero (opcional)</label><select id="genero"><option value="">Prefiro não informar</option><option>Masculino</option><option>Feminino</option><option>Outro</option></select></p>
+                <p class="termos"><input id="termos" type="checkbox" required><label for="termos">Li as <a href="../privacidade/privacidade.html">informações de privacidade e demonstração</a>.</label></p>
+                <p id="retorno-cadastro" class="mensagem" role="status" aria-live="polite" hidden></p>
+                <button class="botao botao-completo" type="submit" disabled>Criar conta de demonstração</button>
+                <p class="rodape-form">Já tem uma conta? <a href="../login/login.html">Entrar</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p><strong>MEKKA SHOPPING</strong><br>Equipamentos que movimentam novos negócios.</p>
+        <nav aria-label="Links do rodapé"><a href="../marketplace/market.html">Explorar equipamentos</a><a href="../privacidade/privacidade.html">Privacidade e demonstração</a><a href="../cadastro/cadastro.html">Criar conta</a></nav>
+        <small>Projeto acadêmico · PUC-Campinas · 2026. Anúncios, preços e operações demonstrativos.</small>
+    </footer>
+
+</body>
+</html>

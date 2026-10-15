@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pesquise e filtre máquinas por marca, categoria, condição, localização e preço no catálogo demonstrativo Mekka Shopping.">
+    <title>Marketplace | Mekka Shopping</title>
+    <link rel="stylesheet" href="../compartilhado/estilos.css">
+    <link rel="stylesheet" href="market.css">
+    <script src="../compartilhado/comum.js" defer></script>
+    <script src="../compartilhado/dados.js" defer></script>
+    <script src="../compartilhado/cartoes.js" defer></script>
+    <script src="market.js" defer></script>
+</head>
+<body>
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <a class="marca" href="../inicio/mekka.html" aria-label="Mekka Shopping, início"><span class="simbolo" aria-hidden="true">M</span><span>MEKKA <small>SHOPPING</small></span></a>
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="../inicio/mekka.html">Início</a></li>
+                <li><a href="../marketplace/market.html" aria-current="page">Marketplace</a></li>
+                <li><a href="../anunciar/anunciar.html" class="botao compacto">Anunciar</a></li>
+                <li><a href="../login/login.html" id="link-conta">Entrar</a></li>
+                <li><button type="button" id="sair" class="link-botao" hidden>Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <noscript><p class="aviso">Ative o JavaScript para pesquisar equipamentos e usar os formulários demonstrativos.</p></noscript>
+
+        <header class="abertura"><p class="sobretitulo">ENCONTRE SUA PRÓXIMA OPORTUNIDADE</p><h1>Marketplace</h1><p>Máquinas e equipamentos para cada etapa do seu negócio.</p></header>
+        <search aria-label="Pesquisa e filtros do catálogo">
+            <form id="filtros" class="painel filtros" action="../marketplace/market.html" method="get">
+                <p class="campo campo-busca"><label for="busca">O que você está procurando?</label><input type="search" id="busca" name="busca" placeholder="Nome, marca ou categoria" maxlength="100"></p>
+                <p class="campo"><label for="categoria">Categoria</label><select id="categoria" name="categoria"><option value="">Todas as categorias</option></select></p>
+                <p class="campo"><label for="marca">Marca</label><select id="marca" name="marca"><option value="">Todas as marcas</option></select></p>
+                <p class="campo"><label for="condicao">Condição</label><select id="condicao" name="condicao"><option value="">Todas as condições</option><option>Novo</option><option>Seminovo</option><option>Usado</option></select></p>
+                <p class="campo"><label for="localizacao">Localização</label><select id="localizacao" name="localizacao"><option value="">Todas as cidades</option></select></p>
+                <p class="campo"><label for="preco-minimo">Preço mínimo (R$)</label><input id="preco-minimo" name="minimo" type="number" min="0" step="0.01" placeholder="0"></p>
+                <p class="campo"><label for="preco-maximo">Preço máximo (R$)</label><input id="preco-maximo" name="maximo" type="number" min="0" step="0.01" placeholder="Sem limite"></p>
+                <p class="campo"><label for="ordenacao">Ordenar por</label><select id="ordenacao" name="ordem"><option value="padrao">Destaques</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option><option value="ano">Ano mais recente</option></select></p>
+                <p class="acoes-filtros"><button class="botao" type="submit">Aplicar filtros</button><button class="botao secundario" type="reset">Limpar filtros</button></p>
+                <p id="erro-filtros" class="mensagem erro largura-total" role="alert" hidden></p>
+            </form>
+        </search>
+        <section class="secao" aria-labelledby="titulo-resultados">
+            <header class="titulo-secao"><h2 id="titulo-resultados">Equipamentos disponíveis</h2><p id="quantidade" role="status" aria-live="polite"></p></header>
+            <p class="nota">Catálogo de demonstração. Valores, condições e localização são exemplos acadêmicos.</p>
+            <ul id="lista-produtos" class="grade-produtos"></ul>
+            <p id="sem-resultados" class="estado-vazio" hidden>Nenhum equipamento encontrado. Tente outro termo ou limpe os filtros.</p>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p><strong>MEKKA SHOPPING</strong><br>Equipamentos que movimentam novos negócios.</p>
+        <nav aria-label="Links do rodapé"><a href="../marketplace/market.html">Explorar equipamentos</a><a href="../privacidade/privacidade.html">Privacidade e demonstração</a><a href="../cadastro/cadastro.html">Criar conta</a></nav>
+        <small>Projeto acadêmico · PUC-Campinas · 2026. Anúncios, preços e operações demonstrativos.</small>
+    </footer>
+
+    <template id="modelo-cartao">
+        <li>
+            <article class="card-produto">
+                <img class="imagem-produto" src="../produtos/sem-imagem.svg" alt="" width="600" height="400" loading="lazy">
+                <p class="etiqueta"></p>
+                <h3 class="nome-produto"></h3>
+                <p class="local-produto"></p>
+                <p class="info-produto"></p>
+                <p class="preco-produto"></p>
+                <a class="botao botao-escuro oferta" href="../marketplace/market.html">Ver oferta <span aria-hidden="true">↗</span></a>
+            </article>
+        </li>
+    </template>
+</body>
+</html>

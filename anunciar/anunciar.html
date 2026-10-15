@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monte um anúncio demonstrativo com imagem, características e preço do seu equipamento.">
+    <title>Anunciar equipamento | Mekka Shopping</title>
+    <link rel="stylesheet" href="../compartilhado/estilos.css">
+    <link rel="stylesheet" href="anunciar.css">
+    <script src="../compartilhado/comum.js" defer></script>
+    <script src="../compartilhado/dados.js" defer></script>
+    <script src="anunciar.js" defer></script>
+</head>
+<body>
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <a class="marca" href="../inicio/mekka.html" aria-label="Mekka Shopping, início"><span class="simbolo" aria-hidden="true">M</span><span>MEKKA <small>SHOPPING</small></span></a>
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="../inicio/mekka.html">Início</a></li>
+                <li><a href="../marketplace/market.html">Marketplace</a></li>
+                <li><a href="../anunciar/anunciar.html" class="botao compacto">Anunciar</a></li>
+                <li><a href="../login/login.html" id="link-conta">Entrar</a></li>
+                <li><button type="button" id="sair" class="link-botao" hidden>Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <noscript><p class="aviso">Ative o JavaScript para pesquisar equipamentos e usar os formulários demonstrativos.</p></noscript>
+
+        <header class="abertura"><p class="sobretitulo">DÊ UM NOVO DESTINO AO SEU EQUIPAMENTO</p><h1>Anunciar equipamento</h1><p>Preencha as informações para incluir seu equipamento no catálogo deste navegador.</p></header>
+        <p class="aviso">Demonstração acadêmica: o anúncio fica salvo somente neste navegador. Use informações e imagens fictícias.</p>
+        <form id="form-anuncio" class="painel formulario-anuncio" method="post" novalidate>
+            <fieldset><legend>Informações do equipamento</legend>
+                <p class="campo largura-total"><label for="nome">Nome do equipamento</label><input id="nome" type="text" required minlength="3" maxlength="90" placeholder="Ex.: Escavadeira Caterpillar 320"></p>
+                <p class="campo"><label for="categoria">Categoria</label><select id="categoria" required><option value="">Selecione uma categoria</option><option>Construção</option><option>Usinagem</option><option>Energia</option><option>Movimentação</option><option>Limpeza</option><option>Peças e manutenção</option></select></p>
+                <p class="campo"><label for="marca">Marca</label><input id="marca" type="text" required minlength="2" maxlength="40" placeholder="Ex.: Caterpillar"></p>
+                <p class="campo"><label for="ano">Ano de fabricação</label><input id="ano" type="number" required min="1950" step="1" placeholder="Ex.: 2023"></p>
+                <p class="campo"><label for="condicao">Condição</label><select id="condicao" required><option value="">Selecione</option><option>Novo</option><option>Seminovo</option><option>Usado</option></select></p>
+                <p class="campo"><label for="preco">Preço (R$)</label><input id="preco" type="number" required min="0.01" max="999999999" step="0.01" placeholder="Ex.: 250000"></p>
+                <p class="campo"><label for="cidade">Cidade</label><input id="cidade" type="text" required minlength="2" maxlength="60" placeholder="Ex.: Campinas"></p>
+                <p class="campo"><label for="uf">Estado</label><select id="uf" required><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></p>
+                <p class="campo largura-total"><label for="descricao">Descrição</label><textarea id="descricao" required minlength="20" maxlength="1500" placeholder="Descreva o uso, as características e o estado do equipamento."></textarea></p>
+            </fieldset>
+            <fieldset><legend>Imagem do anúncio</legend>
+                <p class="campo"><label for="imagem">Foto (opcional)</label><input id="imagem" type="file" accept="image/png,image/jpeg,image/webp" aria-describedby="ajuda-imagem"><small id="ajuda-imagem">JPG, PNG ou WebP de até 500 KB. Sem foto, usaremos uma imagem padrão.</small></p>
+                <figure class="previa"><img id="previa-imagem" src="../produtos/sem-imagem.svg" alt="Prévia da imagem do anúncio" width="450" height="300"><figcaption>Prévia do anúncio</figcaption></figure>
+            </fieldset>
+            <p id="retorno-anuncio" class="mensagem" role="status" aria-live="polite" hidden></p>
+            <p class="acoes-formulario"><button class="botao" type="submit" disabled>Salvar anúncio de demonstração</button><button class="botao secundario" type="reset">Limpar formulário</button></p>
+        </form>
+        <section id="anuncio-criado" class="painel secao" aria-labelledby="titulo-criado" tabindex="-1" hidden><h2 id="titulo-criado">Seu anúncio está no catálogo deste navegador.</h2><p class="nota">Ele continuará disponível ao recarregar a página.</p><a id="ver-anuncio" href="../marketplace/market.html" class="botao">Ver meu anúncio</a><a href="../marketplace/market.html" class="atalho">Ir para o marketplace</a></section>
+    </main>
+
+    <footer class="rodape">
+        <p><strong>MEKKA SHOPPING</strong><br>Equipamentos que movimentam novos negócios.</p>
+        <nav aria-label="Links do rodapé"><a href="../marketplace/market.html">Explorar equipamentos</a><a href="../privacidade/privacidade.html">Privacidade e demonstração</a><a href="../cadastro/cadastro.html">Criar conta</a></nav>
+        <small>Projeto acadêmico · PUC-Campinas · 2026. Anúncios, preços e operações demonstrativos.</small>
+    </footer>
+
+</body>
+</html>

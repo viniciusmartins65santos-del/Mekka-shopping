@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore máquinas e equipamentos novos, seminovos e usados no projeto acadêmico Mekka Shopping.">
+    <title>Máquinas para novos negócios | Mekka Shopping</title>
+    <link rel="stylesheet" href="../compartilhado/estilos.css">
+    <link rel="stylesheet" href="mekka.css">
+    <script src="../compartilhado/comum.js" defer></script>
+    <script src="../compartilhado/dados.js" defer></script>
+    <script src="../compartilhado/cartoes.js" defer></script>
+    <script src="mekka.js" defer></script>
+</head>
+<body>
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <a class="marca" href="../inicio/mekka.html" aria-label="Mekka Shopping, início"><span class="simbolo" aria-hidden="true">M</span><span>MEKKA <small>SHOPPING</small></span></a>
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="../inicio/mekka.html" aria-current="page">Início</a></li>
+                <li><a href="../marketplace/market.html">Marketplace</a></li>
+                <li><a href="../anunciar/anunciar.html" class="botao compacto">Anunciar</a></li>
+                <li><a href="../login/login.html" id="link-conta">Entrar</a></li>
+                <li><button type="button" id="sair" class="link-botao" hidden>Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <noscript><p class="aviso">Ative o JavaScript para pesquisar equipamentos e usar os formulários demonstrativos.</p></noscript>
+
+        <section class="hero" aria-labelledby="titulo-inicio">
+            <header class="hero-texto">
+                <p class="sobretitulo">MÁQUINAS. OPORTUNIDADES. NOVOS NEGÓCIOS.</p>
+                <h1 id="titulo-inicio">O próximo passo do seu negócio começa aqui.</h1>
+                <p>Encontre equipamentos para construir, produzir e ir além. Explore nosso catálogo de máquinas novas e usadas.</p>
+                <a class="botao" href="../marketplace/market.html">Explorar marketplace <span aria-hidden="true">↗</span></a>
+            </header>
+            <figure class="hero-imagem">
+                <img src="../produtos/escavadeira-cat.png" alt="Escavadeira Caterpillar 320 amarela" width="1536" height="1024" fetchpriority="high">
+                <figcaption><span>EM DESTAQUE</span><a href="../produto/produto.html?id=cat-320">Caterpillar 320 <span aria-hidden="true">↗</span></a></figcaption>
+            </figure>
+        </section>
+        <search class="busca-inicio" aria-label="Buscar equipamentos">
+            <form action="../marketplace/market.html" method="get" class="busca">
+                <label for="busca-inicio">Qual equipamento você procura?</label>
+                <input type="search" id="busca-inicio" name="busca" placeholder="Ex.: escavadeira, usinagem, Bobcat" maxlength="100">
+                <button class="botao" type="submit">Pesquisar</button>
+            </form>
+        </search>
+        <section class="secao" aria-labelledby="titulo-marcas">
+            <header class="titulo-secao"><h2 id="titulo-marcas">Conheça os fabricantes</h2><p>Visite os sites oficiais das marcas.</p></header>
+            <ul class="lojas">
+                <li><a href="https://www.cat.com/pt_BR.html" target="_blank" rel="noopener noreferrer" aria-label="Site oficial Caterpillar, abre em nova aba"><img src="../logos/logo-cat.png" alt="Caterpillar" width="160" height="90" loading="lazy"></a></li>
+                <li><a href="https://www.bobcat.com/br/pt" target="_blank" rel="noopener noreferrer" aria-label="Site oficial Bobcat, abre em nova aba"><img src="../logos/logo-bobcat.png" alt="Bobcat" width="160" height="90" loading="lazy"></a></li>
+                <li><a href="https://www.bosch-professional.com/br/pt/" target="_blank" rel="noopener noreferrer" aria-label="Site oficial Bosch, abre em nova aba"><img src="../logos/logo-bosch.png" alt="Bosch" width="160" height="90" loading="lazy"></a></li>
+                <li><a href="https://www.haascnc.com/pt.html" target="_blank" rel="noopener noreferrer" aria-label="Site oficial Haas, abre em nova aba"><img src="../logos/logo-haas.png" alt="Haas" width="160" height="90" loading="lazy"></a></li>
+                <li><a href="https://www.weg.net/institutional/BR/pt/" target="_blank" rel="noopener noreferrer" aria-label="Site oficial WEG, abre em nova aba"><img src="../logos/logo-weg.png" alt="WEG" width="160" height="90" loading="lazy"></a></li>
+                <li><a href="https://www.makino.com/br/pt/" target="_blank" rel="noopener noreferrer" aria-label="Site oficial Makino, abre em nova aba"><img src="../logos/logo-makino.png" alt="Makino" width="160" height="90" loading="lazy"></a></li>
+            </ul>
+        </section>
+        <section class="secao" aria-labelledby="titulo-destaques">
+            <header class="titulo-secao"><h2 id="titulo-destaques">Equipamentos em destaque</h2><a href="../marketplace/market.html">Ver catálogo completo →</a></header>
+            <ul id="destaques" class="grade-produtos"></ul>
+        </section>
+        <aside class="chamada" aria-label="Convite para anunciar">
+            <h2>Uma máquina parada. Uma nova oportunidade.</h2>
+            <p>Apresente seu equipamento a quem precisa dele. Crie um anúncio de demonstração.</p>
+            <a href="../anunciar/anunciar.html" class="botao">Anunciar equipamento</a>
+        </aside>
+    </main>
+
+    <footer class="rodape">
+        <p><strong>MEKKA SHOPPING</strong><br>Equipamentos que movimentam novos negócios.</p>
+        <nav aria-label="Links do rodapé"><a href="../marketplace/market.html">Explorar equipamentos</a><a href="../privacidade/privacidade.html">Privacidade e demonstração</a><a href="../cadastro/cadastro.html">Criar conta</a></nav>
+        <small>Projeto acadêmico · PUC-Campinas · 2026. Anúncios, preços e operações demonstrativos.</small>
+    </footer>
+
+    <template id="modelo-cartao">
+        <li>
+            <article class="card-produto">
+                <img class="imagem-produto" src="../produtos/sem-imagem.svg" alt="" width="600" height="400" loading="lazy">
+                <p class="etiqueta"></p>
+                <h3 class="nome-produto"></h3>
+                <p class="local-produto"></p>
+                <p class="info-produto"></p>
+                <p class="preco-produto"></p>
+                <a class="botao botao-escuro oferta" href="../marketplace/market.html">Ver oferta <span aria-hidden="true">↗</span></a>
+            </article>
+        </li>
+    </template>
+</body>
+</html>

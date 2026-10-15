@@ -1,0 +1,8 @@
+.formulario-anuncio { max-width: 900px; }
+.formulario-anuncio fieldset { border: none; padding: 10px 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; min-width: 0; }
+.formulario-anuncio legend { font-size: 1.25rem; font-weight: 700; padding: 8px 0 16px; }
+.previa img { width: 100%; max-width: 300px; aspect-ratio: 3 / 2; object-fit: contain; background: #ecebe6; border-radius: 6px; }
+.previa figcaption { font-size: 0.8rem; color: var(--suave); margin: 6px 0; }
+.acoes-formulario { display: flex; flex-wrap: wrap; gap: 12px; }
+.atalho { display: inline-block; margin: 16px; }
+@media (max-width: 600px) { .formulario-anuncio fieldset { grid-template-columns: 1fr; } .acoes-formulario .botao { width: 100%; } }

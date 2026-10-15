@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça o fluxo demonstrativo de recuperação de senha do Mekka Shopping.">
+    <title>Recuperar senha | Mekka Shopping</title>
+    <link rel="stylesheet" href="../compartilhado/estilos.css">
+    <link rel="stylesheet" href="../compartilhado/formularios.css">
+    <link rel="stylesheet" href="recuperar-senha.css">
+    <script src="../compartilhado/comum.js" defer></script>
+    <script src="recuperar-senha.js" defer></script>
+</head>
+<body>
+
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <a class="marca" href="../inicio/mekka.html" aria-label="Mekka Shopping, início"><span class="simbolo" aria-hidden="true">M</span><span>MEKKA <small>SHOPPING</small></span></a>
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="../inicio/mekka.html">Início</a></li>
+                <li><a href="../marketplace/market.html">Marketplace</a></li>
+                <li><a href="../anunciar/anunciar.html" class="botao compacto">Anunciar</a></li>
+                <li><a href="../login/login.html" id="link-conta">Entrar</a></li>
+                <li><button type="button" id="sair" class="link-botao" hidden>Sair</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <noscript><p class="aviso">Ative o JavaScript para pesquisar equipamentos e usar os formulários demonstrativos.</p></noscript>
+
+        <section class="acesso" aria-labelledby="titulo-recuperar">
+            <header class="abertura"><p class="sobretitulo">ACESSO À CONTA</p><h1 id="titulo-recuperar">Recuperar senha</h1><p>Experimente como seria solicitar a recuperação da conta.</p></header>
+            <p class="aviso">Nesta demonstração, não guardamos senhas e não enviamos e-mails.</p>
+            <form id="form-recuperar" class="painel" method="post" novalidate>
+                <p class="campo"><label for="email">E-mail</label><input id="email" type="email" required maxlength="120" autocomplete="email" placeholder="nome@exemplo.com"></p>
+                <p id="retorno-recuperar" class="mensagem" role="status" aria-live="polite" hidden></p>
+                <button type="submit" class="botao botao-completo" disabled>Simular recuperação</button>
+                <p class="rodape-form"><a href="../login/login.html">Voltar para o login</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p><strong>MEKKA SHOPPING</strong><br>Equipamentos que movimentam novos negócios.</p>
+        <nav aria-label="Links do rodapé"><a href="../marketplace/market.html">Explorar equipamentos</a><a href="../privacidade/privacidade.html">Privacidade e demonstração</a><a href="../cadastro/cadastro.html">Criar conta</a></nav>
+        <small>Projeto acadêmico · PUC-Campinas · 2026. Anúncios, preços e operações demonstrativos.</small>
+    </footer>
+
+</body>
+</html>

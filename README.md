@@ -73,7 +73,7 @@ A pasta `compartilhado` evita repetir os mesmos estilos e funções. `logos` e `
 - Página inicial com pesquisa, fabricantes e equipamentos em destaque.
 - Marketplace com 12 equipamentos de demonstração.
 - Busca por nome, marca ou categoria, sem diferença entre letras maiúsculas e minúsculas ou acentos.
-- Filtros combinados por categoria, marca, condição, cidade e faixa de preço.
+- Filtros combinados por categoria, marca, condição, ano, UF, cidade e faixa de preço.
 - Ordenação por menor preço, maior preço e ano mais recente.
 - Mensagens para busca sem resultados e intervalo de preço inválido.
 - Detalhes do equipamento selecionado e tratamento de identificador inexistente.

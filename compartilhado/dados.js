@@ -73,25 +73,27 @@ const produtos = [
     }
 ];
 
+function anuncioValido(anuncio) {
+    return anuncio && typeof anuncio.id === "string" && typeof anuncio.nome === "string"
+        && typeof anuncio.marca === "string" && typeof anuncio.categoria === "string"
+        && typeof anuncio.cidade === "string" && typeof anuncio.uf === "string"
+        && typeof anuncio.condicao === "string" && typeof anuncio.descricao === "string"
+        && typeof anuncio.imagem === "string" && Number.isFinite(anuncio.preco)
+        && Number.isFinite(anuncio.ano);
+}
+
 function lerAnuncios() {
-    try {
-        const anuncios = JSON.parse(localStorage.getItem("mekkaAnuncios")) || [];
-        if (!Array.isArray(anuncios)) {
-            return [];
-        }
-        return anuncios.filter(function (anuncio) {
-            return anuncio && typeof anuncio.id === "string" && typeof anuncio.nome === "string"
-                && typeof anuncio.marca === "string" && typeof anuncio.categoria === "string"
-                && typeof anuncio.cidade === "string" && typeof anuncio.uf === "string"
-                && typeof anuncio.condicao === "string" && typeof anuncio.descricao === "string"
-                && typeof anuncio.imagem === "string" && Number.isFinite(anuncio.preco)
-                && Number.isFinite(anuncio.ano);
-        });
-    } catch {
-        return [];
-    }
+    const registro = localStorage.getItem("mekkaAnuncios");
+    if (registro === null) return [];
+    const anuncios = JSON.parse(registro);
+    if (!Array.isArray(anuncios)) throw new Error("Formato de anúncios inválido.");
+    return anuncios;
 }
 
 function obterProdutos() {
-    return produtos.concat(lerAnuncios());
+    try {
+        return produtos.concat(lerAnuncios().filter(anuncioValido));
+    } catch {
+        return produtos.slice();
+    }
 }

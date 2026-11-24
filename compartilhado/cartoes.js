@@ -3,7 +3,7 @@ function mostrarProdutos(lista, destino) {
     destino.replaceChildren();
     lista.forEach(function (produto) {
         const cartao = modelo.content.cloneNode(true);
-        cartao.querySelector(".imagem-produto").src = produto.imagem;
+        carregarFoto(cartao.querySelector(".imagem-produto"), produto.imagem);
         cartao.querySelector(".imagem-produto").alt = produto.nome;
         cartao.querySelector(".etiqueta").textContent = produto.categoria;
         cartao.querySelector(".nome-produto").textContent = produto.nome;

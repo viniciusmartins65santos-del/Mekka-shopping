@@ -71,3 +71,11 @@ document.querySelectorAll("input, textarea").forEach(function (campo) {
 });
 
 atualizarCabecalho();
+
+function carregarFoto(imagem, caminho) {
+    const padrao = "../produtos/sem-imagem.svg";
+    imagem.addEventListener("error", function () {
+        if (imagem.getAttribute("src") !== padrao) imagem.src = padrao;
+    }, { once: true });
+    imagem.src = caminho || padrao;
+}

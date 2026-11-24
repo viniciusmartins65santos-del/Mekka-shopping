@@ -31,6 +31,8 @@ function filtrarProdutos() {
     const minimo = Number(document.getElementById("preco-minimo").value);
     const campoMaximo = document.getElementById("preco-maximo");
     const maximo = campoMaximo.value === "" ? Infinity : Number(campoMaximo.value);
+    const ano = document.getElementById("ano").value;
+    const uf = document.getElementById("uf").value;
     const ordem = document.getElementById("ordenacao").value;
     document.getElementById("erro-filtros").hidden = true;
 
@@ -47,6 +49,8 @@ function filtrarProdutos() {
             && (marca === "" || produto.marca === marca)
             && (condicao === "" || produto.condicao === condicao)
             && (localizacao === "" || local === localizacao)
+            && (ano === "" || String(produto.ano) === ano)
+            && (uf === "" || produto.uf === uf)
             && produto.preco >= minimo && produto.preco <= maximo;
     });
 
@@ -65,6 +69,8 @@ function filtrarProdutos() {
 
 if (filtros) {
     preencherOpcoes("categoria", todosProdutos.map(function (produto) { return produto.categoria; }));
+    preencherOpcoes("ano", todosProdutos.map(function (produto) { return String(produto.ano); }));
+    preencherOpcoes("uf", todosProdutos.map(function (produto) { return produto.uf; }));
     preencherOpcoes("marca", todosProdutos.map(function (produto) { return produto.marca; }));
     preencherOpcoes("localizacao", todosProdutos.map(function (produto) { return produto.cidade + " / " + produto.uf; }));
     const parametros = new URLSearchParams(window.location.search);

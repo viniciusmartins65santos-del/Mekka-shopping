@@ -42,6 +42,7 @@ campoImagem.addEventListener("change", function () {
 });
 
 previaImagem.addEventListener("error", function () {
+    if (previaImagem.getAttribute("src") === "../produtos/sem-imagem.svg") return;
     imagemAnuncio = "../produtos/sem-imagem.svg";
     previaImagem.src = imagemAnuncio;
     campoImagem.setCustomValidity("O arquivo não contém uma imagem válida.");
@@ -66,7 +67,14 @@ formularioAnuncio.addEventListener("submit", function (evento) {
         descricao: document.getElementById("descricao").value,
         imagem: imagemAnuncio
     };
-    const anuncios = lerAnuncios();
+    let anuncios;
+    try {
+        anuncios = lerAnuncios();
+        if (!anuncios.every(anuncioValido)) throw new Error("Anúncio inválido.");
+    } catch {
+        mostrarMensagem("retorno-anuncio", "Falha ao ler os anúncios anteriores. Os dados foram preservados. Confira o armazenamento do navegador antes de tentar novamente.", true);
+        return;
+    }
     anuncios.push(anuncio);
     try {
         localStorage.setItem("mekkaAnuncios", JSON.stringify(anuncios));

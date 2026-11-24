@@ -4,14 +4,23 @@ limparDados.addEventListener("click", function () {
     if (!window.confirm("Apagar os anúncios deste navegador e o cadastro demonstrativo desta aba?")) {
         return;
     }
-    try {
-        localStorage.removeItem("mekkaAnuncios");
-        sessionStorage.removeItem("mekkaCadastro");
-        sessionStorage.removeItem("mekkaUsuario");
-        atualizarCabecalho();
+    const falhas = [];
+    function apagar(armazenamento, chave, nome) {
+        try {
+            window[armazenamento].removeItem(chave);
+        } catch {
+            falhas.push(nome);
+        }
+    }
+    apagar("localStorage", "mekkaAnuncios", "anúncios");
+    apagar("sessionStorage", "mekkaCadastro", "cadastro");
+    apagar("sessionStorage", "mekkaUsuario", "sessão");
+    atualizarCabecalho();
+    if (falhas.length) {
+        const resumo = falhas.length === 3 ? "Limpeza bloqueada." : "Limpeza parcial.";
+        mostrarMensagem("retorno-limpeza", resumo + " Falha ao apagar: " + falhas.join(", ") + ".", true);
+    } else {
         mostrarMensagem("retorno-limpeza", "Os dados locais da demonstração foram apagados.");
-    } catch {
-        mostrarMensagem("retorno-limpeza", "Não foi possível apagar todos os dados. Confira as permissões do navegador.", true);
     }
 });
 limparDados.disabled = false;

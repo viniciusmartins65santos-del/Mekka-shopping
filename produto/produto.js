@@ -11,7 +11,7 @@ if (!produtoSelecionado) {
     document.title = produtoSelecionado.nome + " | Mekka Shopping";
     document.getElementById("detalhes-produto").hidden = false;
     document.getElementById("titulo-produto").textContent = produtoSelecionado.nome;
-    document.getElementById("foto-produto").src = produtoSelecionado.imagem;
+    carregarFoto(document.getElementById("foto-produto"), produtoSelecionado.imagem);
     document.getElementById("foto-produto").alt = produtoSelecionado.nome;
     document.getElementById("preco-produto").textContent = formatarPreco(produtoSelecionado.preco);
     document.getElementById("local-produto").textContent = produtoSelecionado.cidade + " / " + produtoSelecionado.uf;
